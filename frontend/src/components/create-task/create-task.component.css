@@ -1,0 +1,418 @@
+/* Page Header Styling */
+.page-header {
+  /* background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); */
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  /* box-shadow: 0 8px 32px rgba(240, 147, 251, 0.3); */
+}
+
+.header-content {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header-icon {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.header-icon svg {
+  color: black;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+
+.header-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+.header-icon:hover svg {
+  transform: scale(1.05);
+}
+
+.header-text h1 {
+  margin: 0 0 0.5rem 0;
+  color: black;
+  font-size: 2rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header-subtitle {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+/* Enhanced Animations */
+.page-header {
+  animation: slideInDown 0.5s ease-out;
+}
+
+.header-icon {
+  animation: bounceIn 0.7s ease-out 0.2s both;
+}
+
+.header-text h1 {
+  animation: slideInRight 0.6s ease-out 0.3s both;
+}
+
+.header-subtitle {
+  animation: slideInRight 0.6s ease-out 0.4s both;
+}
+
+/* Create Task Form Styling */
+form {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+/* Form Layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Label Styling */
+label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Input and Textarea Styling */
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #374151;
+  background-color: #ffffff;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+/* Textarea Specific Styling */
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Select Dropdown Styling */
+select {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #374151;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Focus States */
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  background-color: #fefefe;
+}
+
+/* Hover States */
+input[type="text"]:hover,
+textarea:hover,
+select:hover {
+  border-color: #d1d5db;
+}
+
+/* Error States (for form validation) */
+input[type="text"].ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Success States (for form validation) */
+input[type="text"].ng-valid.ng-touched,
+textarea.ng-valid.ng-touched,
+select.ng-valid.ng-touched {
+  border-color: #10b981;
+}
+
+/* Priority Dropdown Specific Styling */
+.priority-dropdown option[value="low"] {
+  color: #059669;
+}
+
+.priority-dropdown option[value="medium"] {
+  color: #d97706;
+}
+
+.priority-dropdown option[value="high"] {
+  color: #dc2626;
+}
+
+.priority-dropdown option[value="urgent"] {
+  color: #7c2d12;
+  font-weight: bold;
+}
+
+/* Form Field Container */
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Placeholder Styling */
+input[type="text"]::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* Select Disabled Option */
+select option:disabled {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* Form Buttons */
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: flex-end;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+button.primary {
+  background-color: #3b82f6;
+  color: white;
+}
+
+button.primary:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+button.primary:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+button.secondary {
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+button.secondary:hover {
+  background-color: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceIn {
+  0%,
+  20%,
+  40%,
+  60%,
+  80% {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 2rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .header-text h1 {
+    font-size: 1.7rem;
+  }
+
+  .header-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .header-icon {
+    padding: 0.8rem;
+  }
+
+  .header-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  form {
+    margin: 0 1rem 2rem;
+    padding: 1.5rem;
+    max-width: none;
+  }
+
+  input[type="text"],
+  textarea,
+  select {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .header-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+/* Animation for form appearance */
+form {
+  animation: slideInUp 0.3s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Validation Error Messages (if you want to add them later) */
+.error-message {
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  font-style: italic;
+}

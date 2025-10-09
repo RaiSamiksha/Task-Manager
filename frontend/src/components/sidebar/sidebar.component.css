@@ -1,0 +1,10 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+mat-sidenav-container {
+  height: 100vh; /* full viewport height */
+  width: 100vw; /* full viewport width */
+}

@@ -1,0 +1,83 @@
+<!-- Page Header -->
+<div class="page-header">
+  <div class="header-content">
+    <div class="header-icon">
+      @if (!isEditMode) {
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+        ></path>
+        <polyline points="14,2 14,8 20,8"></polyline>
+        <line x1="16" y1="13" x2="8" y2="13"></line>
+        <line x1="16" y1="17" x2="8" y2="17"></line>
+        <polyline points="10,9 9,9 8,9"></polyline>
+      </svg>
+      } @if (isEditMode) {
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+        ></path>
+        <path
+          d="m18.5 2.5 a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+        ></path>
+      </svg>
+      }
+    </div>
+    <div class="header-text">
+      <h1>{{ isEditMode ? "Edit Project" : "Create New Project" }}</h1>
+      <p class="header-subtitle">
+        {{
+          isEditMode
+            ? "Update your project information and settings"
+            : "Set up a new project to organize your tasks and goals"
+        }}
+      </p>
+    </div>
+  </div>
+</div>
+
+<form [formGroup]="projectForm" (ngSubmit)="onProjectSubmit()">
+  <div class="form-field">
+    <label for="project-name">Project Name</label>
+    <input
+      id="project-name"
+      type="text"
+      formControlName="projectName"
+      placeholder="Enter project name"
+      [readonly]="isEditMode"
+    />
+  </div>
+
+  <div class="form-field">
+    <label for="project-description">Project Description</label>
+    <input
+      id="project-description"
+      type="text"
+      formControlName="projectDescription"
+      placeholder="Describe project"
+    />
+  </div>
+
+  <div class="form-buttons">
+    <button type="button" class="secondary" (click)="router.navigate(['/'])">
+      Cancel
+    </button>
+    <button type="submit" class="primary">
+      {{ isEditMode ? "Update Project" : "Create Project" }}
+    </button>
+  </div>
+</form>

@@ -1,0 +1,55 @@
+/* Tasks Wrapper */
+.tasks-wrapper {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Page Header */
+.page-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #333;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 400;
+}
+
+/* Table Container */
+.example-container {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.create-task {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tasks-wrapper {
+    padding: 1rem;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+}

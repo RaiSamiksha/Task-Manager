@@ -1,0 +1,54 @@
+<div class="dashboard-container">
+  <div class="dashboard-status-bar">
+    <div class="dashboard-status-section">
+      <div class="dashboard-status-value">24</div>
+      <div class="dashboard-status-label">Total Projects</div>
+    </div>
+
+    <div class="vertical-divider"></div>
+
+    <div class="dashboard-status-section">
+      <div class="dashboard-status-value">156</div>
+      <div class="dashboard-status-label">Completed Tasks</div>
+    </div>
+
+    <div class="vertical-divider"></div>
+
+    <div class="dashboard-status-section">
+      <div class="dashboard-status-value">42</div>
+      <div class="dashboard-status-label">Pending Tasks</div>
+    </div>
+
+    <div class="vertical-divider"></div>
+
+    <div class="dashboard-status-section">
+      <div class="dashboard-status-value">8</div>
+      <div class="dashboard-status-label">Upcoming Deadlines</div>
+    </div>
+  </div>
+
+  <div class="task-buttons">
+    <div class="create-project">
+      <button mat-raised-button color="primary" (click)="createProject()">
+        Create New Project
+      </button>
+    </div>
+    <div class="create-task">
+      <button mat-raised-button color="primary" (click)="createTask()">
+        Create New Task
+      </button>
+    </div>
+  </div>
+
+  <!-- Dashboard Content -->
+  <div class="dashboard-content">
+    <h1>Dashboard</h1>
+    <p>Welcome to your task management dashboard!</p>
+    <div class="charts-section">
+      <div class="chart-card">
+        <h3>Tasks Over Time</h3>
+        <canvas id="MyChart">{{ chart }}</canvas>
+      </div>
+    </div>
+  </div>
+</div>

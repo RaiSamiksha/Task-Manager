@@ -1,0 +1,17 @@
+<!-- Full Width Header -->
+<app-header class="app-header"></app-header>
+
+<!-- Main Layout Container -->
+<mat-sidenav-container class="main-container">
+  <!-- Sidebar -->
+  <mat-sidenav mode="side" opened class="sidebar-nav">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+
+  <!-- Main Content -->
+  <mat-sidenav-content class="main-content">
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

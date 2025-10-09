@@ -1,0 +1,71 @@
+<div class="projects-wrapper">
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>Projects</h1>
+    <p class="subtitle">Manage and track your project progress</p>
+  </div>
+  <div class="create-project">
+    <button mat-raised-button color="primary" (click)="createProject()">
+      Create New Project
+    </button>
+  </div>
+
+  <!-- Projects Table -->
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.position }} </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="projectName">
+        <mat-header-cell *matHeaderCellDef> Project Name </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.projectName }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- View Details Column -->
+      <ng-container matColumnDef="viewProjectDetails">
+        <mat-header-cell *matHeaderCellDef> View Details </mat-header-cell>
+        <mat-cell *matCellDef="let element"
+          ><button mat-stroked-button (click)="viewProjectDetails(element)">
+            Project Details
+          </button></mat-cell
+        >
+      </ng-container>
+
+      <!-- Delete Column -->
+      <ng-container matColumnDef="deleteProject">
+        <mat-header-cell *matHeaderCellDef> Delete Project </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-icon-button (click)="deleteProject(element)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="editProject">
+        <mat-header-cell *matHeaderCellDef> Edit </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-icon-button (click)="editProject(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+
+    <mat-paginator
+      #paginator
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20]"
+      [showFirstLastButtons]="true"
+    >
+    </mat-paginator>
+  </div>
+</div>

@@ -1,0 +1,114 @@
+<div class="task-form-container">
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="header-content">
+      <div class="header-icon">
+        @if (!isEditMode) {
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2v-4" />
+          <path d="M13 3l7.5 7.5L16 15l-8 1 1-8z" />
+        </svg>
+        } @if (isEditMode) {
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path d="M20 6L9 17l-5-5" />
+          <path d="M16 3h5v5" />
+          <path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5" />
+        </svg>
+        }
+      </div>
+      <div class="header-text">
+        <h1>{{ isEditMode ? "Update Task" : "Create New Task" }}</h1>
+        <p class="header-subtitle">
+          {{
+            isEditMode
+              ? "Modify task details and update your progress"
+              : "Add a new task to organize your work and track progress"
+          }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <form [formGroup]="taskForm" (ngSubmit)="onTaskSubmit()">
+    <div class="form-field">
+      <label for="project-select">Project Name</label>
+      <select
+        id="project-select"
+        formControlName="projectName"
+        class="project-dropdown"
+      >
+        <option value="" disabled>Select a project</option>
+        <option
+          *ngFor="let project of allProjects"
+          [value]="project.projectName"
+        >
+          {{ project.projectName }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="task-name">Task Name</label>
+      <input
+        id="task-name"
+        type="text"
+        formControlName="taskName"
+        placeholder="Enter task name"
+      />
+    </div>
+
+    <div class="form-field">
+      <label for="task-description">Task Description</label>
+      <textarea
+        id="task-description"
+        formControlName="taskDescription"
+        placeholder="Describe the task details and requirements"
+        rows="3"
+      ></textarea>
+    </div>
+
+    <div class="form-field">
+      <label for="task-status">Status</label>
+      <select id="task-status" formControlName="status" class="status-dropdown">
+        <option value="" disabled>Select status</option>
+        <option value="not-started">Not Started</option>
+        <option value="in-progress">In Progress</option>
+        <option value="completed">Completed</option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="task-priority">Priority Level</label>
+      <select
+        id="task-priority"
+        formControlName="priority"
+        class="priority-dropdown"
+      >
+        <option value="" disabled>Select priority</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+        <option value="urgent">Urgent</option>
+      </select>
+    </div>
+
+    <div class="form-buttons">
+      <button type="button" class="secondary">Cancel</button>
+      <button type="submit" class="primary">Create Task</button>
+    </div>
+  </form>
+</div>

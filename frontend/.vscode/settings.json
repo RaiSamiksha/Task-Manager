@@ -1,0 +1,7 @@
+{
+  "codeium.enableConfig": {
+    "*": true
+  },
+  "editor.allowVariableFontsInAccessibilityMode": true,
+  "windsurf": false
+}

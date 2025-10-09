@@ -1,0 +1,90 @@
+<div class="tasks-wrapper">
+  <!-- Page Header -->
+  <div class="page-header">
+    <h1>Tasks</h1>
+    <p class="subtitle">Manage and track your task progress</p>
+  </div>
+  <div class="create-task">
+    <button mat-raised-button color="primary" (click)="createTask()">
+      Create New Task
+    </button>
+  </div>
+
+  <!-- Tasks Table -->
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.position }} </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="projectName">
+        <mat-header-cell *matHeaderCellDef> Project Name </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.projectName }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="taskName">
+        <mat-header-cell *matHeaderCellDef> Task Name </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.taskName }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Status column -->
+      <ng-container matColumnDef="status">
+        <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.status }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- Priority Column -->
+      <ng-container matColumnDef="priority">
+        <mat-header-cell *matHeaderCellDef> Priority </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          {{ element.priority }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- View Details Column -->
+      <ng-container matColumnDef="viewTaskDetails">
+        <mat-header-cell *matHeaderCellDef> View Details </mat-header-cell>
+        <mat-cell *matCellDef="let element"
+          ><button mat-stroked-button (click)="viewTaskDetails(element)">
+            Task Details
+          </button></mat-cell
+        >
+      </ng-container>
+
+      <!-- Delete Column -->
+      <ng-container matColumnDef="deleteTask">
+        <mat-header-cell *matHeaderCellDef> Delete Task </mat-header-cell>
+        <mat-cell *matCellDef="let element"
+          ><mat-icon (click)="deleteTask(element)">delete</mat-icon></mat-cell
+        >
+      </ng-container>
+
+      <ng-container matColumnDef="editTask">
+        <mat-header-cell *matHeaderCellDef> Edit Task </mat-header-cell>
+        <mat-cell *matCellDef="let element"
+          ><mat-icon (click)="editTask(element)">edit</mat-icon></mat-cell
+        >
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+
+    <mat-paginator
+      #paginator
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20]"
+      [showFirstLastButtons]="true"
+    >
+    </mat-paginator>
+  </div>
+</div>
