@@ -1,0 +1,15 @@
+# Node.js
+backend/node_modules/
+backend/.env
+backend/logs/
+backend/.DS_Store
+
+# Angular
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/cache/
+frontend/.DS_Store
+
+# OS/system files
+.DS_Store
+Thumbs.db
