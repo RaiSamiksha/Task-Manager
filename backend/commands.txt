@@ -1,0 +1,9 @@
+npx sequelize-cli init --force
+
+npx sequelize-cli db:create
+
+ npx sequelize-cli model:generate --name Users --attributes id:integer,username:string,password:string
+
+ npx sequelize-cli db:migrate
+
+ npx sequelize-cli seed:generate --name demo-user
