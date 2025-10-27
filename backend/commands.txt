@@ -7,3 +7,5 @@ npx sequelize-cli db:create
  npx sequelize-cli db:migrate
 
  npx sequelize-cli seed:generate --name demo-user
+
+ npx sequelize-cli db:drop
