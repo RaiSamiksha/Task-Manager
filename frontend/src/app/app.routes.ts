@@ -6,6 +6,7 @@ import { ProjectsComponent } from '../components/projects/projects.component';
 import { TasksComponent } from '../components/tasks/tasks.component';
 import { ViewProjectDetailsComponent } from '../components/view-project-details/view-project-details.component';
 import { ViewTaskDetailsComponent } from '../components/view-task-details/view-task-details.component';
+import { UserManagementComponent } from '../components/user-management/user-management.component';
 
 export const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -26,4 +27,5 @@ export const routes: Routes = [
     component: ViewProjectDetailsComponent,
   },
   { path: 'view-task-details/:taskName', component: ViewTaskDetailsComponent },
+  { path: 'user-management', component: UserManagementComponent },
 ];
